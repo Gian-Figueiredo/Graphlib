@@ -2,8 +2,8 @@
 TARGET = run.exe
 
 # Compilador e flags
-CXX = g++ -std=c++23
-CXXFLAGS = -Wall -Iinclude
+CXX = g++
+CXXFLAGS = -std=c++23 -Wall -Iinclude
 
 # Diretórios
 SRC_DIR = src
