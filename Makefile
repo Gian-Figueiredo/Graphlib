@@ -34,6 +34,7 @@ $(BIN_DIR):
 clean:
 	rm -rf $(BIN_DIR) $(TARGET)
 
+# Recompilação forçada
 rebuild: clean all
 
 run: $(TARGET)
