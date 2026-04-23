@@ -1,9 +1,9 @@
 # Nome do executável final
-TARGET = run.exe
+TARGET = programa
 
 # Compilador e flags
 CXX = g++
-CXXFLAGS = -std=c++23 -Wall -Iinclude
+CXXFLAGS = -std=c++23 -Wall -I include
 
 # Diretórios
 SRC_DIR = src
