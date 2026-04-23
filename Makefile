@@ -34,7 +34,10 @@ $(BIN_DIR):
 clean:
 	rm -rf $(BIN_DIR) $(TARGET)
 
+rebuild: clean all
+
 run: $(TARGET)
 	./$(TARGET)
+
 # Evita conflitos com arquivos de mesmo nome
-.PHONY: all clean
+.PHONY: all clean run rebuild
