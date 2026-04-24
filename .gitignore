@@ -1,8 +1,35 @@
-*.o
-*.out
+# 🔧 Pasta de build (CMake)
+build/
+
+# 🧱 Arquivos gerados pelo CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+build.ninja
+*.ninja
+compile_commands.json
+
+# 📦 Executáveis
 *.exe
-*.a
-*.so
-programa
-.vscode
-bin
+*.out
+*.app
+grafos
+
+# 🧪 Objetos compilados
+*.o
+*.obj
+
+# 📁 Pasta de binários (se usar)
+bin/
+
+# 🧹 Arquivos temporários
+*.log
+*.tmp
+*.swp
+
+# 🖥️ VS Code
+.vscode/
+
+# 🐧 Linux / geral
+*~
