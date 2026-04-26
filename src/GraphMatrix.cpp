@@ -3,7 +3,7 @@
 #include <string>
 
 namespace graphlib {
-    GraphMatrix::GraphMatrix(int vertex) : adjMatrix(vertex, std::vector<bool>(vertex, false)) {}
+    GraphMatrix::GraphMatrix(int numVertices) : adjMatrix(numVertices, std::vector<bool>(numVertices, false)) {}
 
     int GraphMatrix::V() const {
         return adjMatrix.size();
@@ -27,8 +27,15 @@ namespace graphlib {
         adjMatrix.at(w).at(v) = true;
     }
 
-    std::vector<bool> GraphMatrix::adj(int v) const {
-        return adjMatrix.at(v);
+    std::vector<int> GraphMatrix::adj(int v) const {
+        std::vector<bool> row = adjMatrix.at(v);
+        std::vector<int> adjList = {};
+        for (int c = 0; c < (int)row.size(); c++) {
+            if (row.at(c)) {
+                adjList.push_back(c);
+            }
+        }
+        return adjList;
     }
 
     std::string GraphMatrix::toString() const {

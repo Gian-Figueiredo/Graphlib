@@ -11,14 +11,14 @@ namespace graphlib {
             std::vector<std::vector<bool>> adjMatrix;
 
         public:
-            GraphMatrix(int vertex);
+            GraphMatrix(int numVertices);
 
             int V() const;
             int E() const;
 
             void addEdge(int v, int w);
 
-            std::vector<bool> adj(int v) const;
+            std::vector<int> adj(int v) const;
             std::string toString() const;
     };
 }
