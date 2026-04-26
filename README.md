@@ -93,7 +93,7 @@ Or run the test binary directly:
 ## 📌 Requirements
 
 * **Standard:** C++17 or higher.
-* **Build System:** CMake 3.10+.
+* **Build System:** CMake 3.15+.
 * **Compiler:** GCC 9+, Clang 10+, or MSVC 2019+.
 
 ---
