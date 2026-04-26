@@ -6,15 +6,19 @@ target_include_directories(graph_test_utils INTERFACE
     ${PROJECT_SOURCE_DIR}/tests/helpers
 )
 
-# Teste GraphMatrix
-add_executable(test_graph_matrix test_GraphMatrix.cpp)
-target_link_libraries(test_graph_matrix PRIVATE graphlib graph_test_utils)
+# Função para criar testes
+function(add_graph_test test_name test_target source_file)
+    add_executable(${test_target} ${source_file})
 
-add_test(NAME TestGraphMatrix COMMAND test_graph_matrix)
+    target_link_libraries(${test_target}
+        PRIVATE
+        graphlib
+        graph_test_utils
+    )
 
-# Teste GraphList
-add_executable(test_graph_list test_GraphList.cpp)
-target_link_libraries(test_graph_list PRIVATE graphlib graph_test_utils)
+    add_test(NAME ${test_name} COMMAND ${test_target})
+endfunction()
 
-add_test(NAME TestGraphList COMMAND test_graph_list)
-
+# Testes
+add_graph_test(TestGraphMatrix test_graph_matrix graphs/test_GraphMatrix.cpp)
+add_graph_test(TestGraphList test_graph_list graphs/test_GraphList.cpp)
