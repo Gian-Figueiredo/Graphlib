@@ -20,16 +20,14 @@ grafos
 *.o
 *.obj
 
-# 📁 Pasta de binários (se usar)
-bin/
-
 # 🧹 Arquivos temporários
 *.log
 *.tmp
 *.swp
 
-# 🖥️ VS Code
+# 🖥️ Arquivos do vscode e do clangd
 .vscode/
+.cache/
 
 # 🐧 Linux / geral
 *~
