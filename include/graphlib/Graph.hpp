@@ -5,7 +5,7 @@
 #include <vector>
 
 namespace graphlib {
-    class IGraph {
+    class Graph {
         public:
             virtual int V() const = 0;
             virtual int E() const = 0;
@@ -15,7 +15,7 @@ namespace graphlib {
             virtual std::vector<bool> adj(int v) const = 0;
             virtual std::string toString() const = 0;
 
-            virtual ~IGraph() = default;
+            virtual ~Graph() = default;
     };
 }
 

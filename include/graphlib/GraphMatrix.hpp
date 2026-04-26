@@ -1,12 +1,12 @@
 #ifndef GRAPH_MATRIX_HPP
 #define GRAPH_MATRIX_HPP
 
-#include <graphlib/IGraph.hpp>
+#include <graphlib/Graph.hpp>
 #include <vector>
 #include <string>
 
 namespace graphlib {
-    class GraphMatrix : public IGraph {
+    class GraphMatrix : public Graph {
         private:
             std::vector<std::vector<bool>> adjMatrix;
 
