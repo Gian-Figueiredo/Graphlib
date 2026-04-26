@@ -3,7 +3,7 @@ project(GraphLib)
 
 # Lista de arquivos fonte
 set(SOURCES
-    src/soma.cpp
+    src/GraphMatrix.cpp
 )
 
 # Cria a biblioteca
@@ -15,9 +15,5 @@ target_compile_features(graphlib PUBLIC cxx_std_17)
 # Headers públicos
 target_include_directories(graphlib PUBLIC include)
 
-# TESTE
-add_executable(test_soma tests/test_soma.cpp)
-target_link_libraries(test_soma graphlib)
+#Testes
 
-enable_testing()
-add_test(NAME SomaTest COMMAND test_soma)
