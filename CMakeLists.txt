@@ -16,4 +16,7 @@ target_compile_features(graphlib PUBLIC cxx_std_17)
 target_include_directories(graphlib PUBLIC include)
 
 #Testes
-
+enable_testing()
+add_executable(test_graph tests/test_GraphMatrix.cpp)
+target_link_libraries(test_graph PRIVATE graphlib)
+add_test(NAME TestGraphMatrix COMMAND test_graph)
