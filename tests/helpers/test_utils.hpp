@@ -15,7 +15,16 @@ namespace graphlib::test {
         assert(g.E() == expectedE);
     }
 
+    inline void test_clearEdge(graphlib::Graph& g) {
+        assert(g.V() > 0);
+        g.addEdge(0, g.V()-1);
+        assert(g.E() > 0);
+        g.clearEdges();
+        assert(g.E() == 0);
+    }
+
     inline void test_addEdge(graphlib::Graph& g) {
+        g.clearEdges();
         assert(g.E() == 0);
 
         g.addEdge(0, 1);
@@ -26,6 +35,7 @@ namespace graphlib::test {
     }
 
     inline void test_adj(graphlib::Graph& g) {
+        g.clearEdges();
         g.addEdge(0, 1);
         g.addEdge(0, 2);
         g.addEdge(0, 3);
@@ -42,9 +52,9 @@ namespace graphlib::test {
             assert(std::find(expected.begin(), expected.end(), v) != expected.end());
     }
 
-    inline void run_contract_tests(graphlib::Graph& g) {
-        test_V(g, 5);
-        test_E(g, 0);
+    inline void run_contract_tests(graphlib::Graph& g, int numVertices, int numEdges) {
+        test_V(g, numVertices);
+        test_E(g, numEdges);
         test_addEdge(g);
         test_adj(g);
     }

@@ -1,7 +1,14 @@
 #include <graphlib/GraphMatrix.hpp>
 #include <test_utils.hpp>
+#include <iostream>
 
 int main() {
     graphlib::GraphMatrix g(5);
-    graphlib::test::run_contract_tests(g);
+    g.addEdge(1, 2);
+    g.addEdge(2, 3);
+    graphlib::test::run_contract_tests(g, 5, 2);
+    g.clearEdges();
+    g.addEdge(1, 2);
+    g.addEdge(2, 3);
+    std::cout << g.toString() << "\n";
 }
