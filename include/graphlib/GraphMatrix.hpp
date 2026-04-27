@@ -17,6 +17,7 @@ namespace graphlib {
             int E() const;
 
             void addEdge(int v, int w);
+            void clearEdges();
 
             std::vector<int> adj(int v) const;
             std::string toString() const;

@@ -27,6 +27,13 @@ namespace graphlib {
         adjMatrix.at(w).at(v) = true;
     }
 
+    void GraphMatrix::clearEdges() {
+        int numVertices = adjMatrix.size();
+        for (int c = 0; c < numVertices; c++) {
+            adjMatrix.at(c) = std::vector<bool>(numVertices, false);
+        }
+    }
+
     std::vector<int> GraphMatrix::adj(int v) const {
         std::vector<bool> row = adjMatrix.at(v);
         std::vector<int> adjList = {};
