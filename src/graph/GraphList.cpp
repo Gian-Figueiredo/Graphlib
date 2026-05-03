@@ -1,4 +1,4 @@
-#include <graphlib/GraphList.hpp>
+#include <graphlib/graph/GraphList.hpp>
 #include <string>
 #include <vector>
 
@@ -46,7 +46,7 @@ namespace graphlib {
             return "Grafo nulo";
         }
 
-        std::string str = "";
+        std::string str;
 
         auto toStringList = [&](int index) {
             int size = adjList.at(index).size();

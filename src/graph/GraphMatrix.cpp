@@ -1,4 +1,4 @@
-#include <graphlib/GraphMatrix.hpp>
+#include <graphlib/graph/GraphMatrix.hpp>
 #include <vector>
 #include <string>
 

@@ -1,7 +1,7 @@
 #ifndef GRAPH_MATRIX_HPP
 #define GRAPH_MATRIX_HPP
 
-#include <graphlib/Graph.hpp>
+#include <graphlib/graph/IGraph.hpp>
 #include <vector>
 #include <string>
 
