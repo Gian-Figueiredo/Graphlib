@@ -6,7 +6,7 @@
 #include <string>
 
 namespace graphlib {
-    class GraphList : public Graph {
+    class GraphList : public IGraph {
         private:
             std::vector<std::vector<int>> adjList;
 

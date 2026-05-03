@@ -6,7 +6,7 @@
 #include <string>
 
 namespace graphlib {
-    class GraphMatrix : public Graph {
+    class GraphMatrix : public IGraph {
         private:
             std::vector<std::vector<bool>> adjMatrix;
 
