@@ -4,8 +4,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Lista de arquivos fonte
 set(SOURCES
-    src/GraphMatrix.cpp
-    src/GraphList.cpp
+    src/graph/GraphMatrix.cpp
+    src/graph/GraphList.cpp
+    src/digraph/DigraphMatrix.cpp
 )
 
 # Cria a biblioteca
