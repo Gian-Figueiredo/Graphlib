@@ -7,6 +7,7 @@ set(SOURCES
     src/graph/GraphMatrix.cpp
     src/graph/GraphList.cpp
     src/digraph/DigraphMatrix.cpp
+    src/digraph/DigraphList.cpp
 )
 
 # Cria a biblioteca
