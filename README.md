@@ -75,17 +75,17 @@ int main() {
 
 ## 🧪 Running Tests
 
-After building the project, run the tests using `ctest` or the generated executable:
+After building the project, run the tests using `ctest`:
+
+```bash
+ctest --test-dir build -V
+```
+
+Or:
 
 ```bash
 cd build
-ctest --output-on-failure
-```
-
-Or run the test binary directly:
-
-```bash
-./build/tests/test_graph
+ctest -V
 ```
 
 ---
