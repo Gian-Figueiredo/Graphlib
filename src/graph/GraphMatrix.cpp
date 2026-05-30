@@ -6,20 +6,7 @@ namespace graphlib {
     GraphMatrix::GraphMatrix(int numVertices) : adjMatrix(numVertices, std::vector<bool>(numVertices, false)) {}
 
     int GraphMatrix::V() const {
-        return adjMatrix.size();
-    }
-
-    int GraphMatrix::E() const {
-        int numVertex = adjMatrix.size();
-        int edge = 0;
-        for (int i = 0; i < numVertex; i++) {
-            for (int j = i; j < numVertex; j++) {
-                if (adjMatrix.at(i).at(j)) {
-                    edge++;
-                }
-            }
-        }
-        return edge;
+        return static_cast<int>(adjMatrix.size());
     }
 
     void GraphMatrix::addEdge(int v, int w) {
@@ -32,6 +19,24 @@ namespace graphlib {
         for (int c = 0; c < numVertices; c++) {
             adjMatrix.at(c) = std::vector<bool>(numVertices, false);
         }
+    }
+
+    int GraphMatrix::degree(int v) const {
+        int degree = 0;
+        for (int c = 0; c < adjMatrix.size(); c++) {
+            if (adjMatrix.at(v).at(c)) {
+                if (c == v) {
+                    degree += 2;
+                } else {
+                    degree += 1;
+                }
+            }
+        }
+        return degree;
+    }
+
+    bool GraphMatrix::hasEdge(int v, int w) const {
+        return adjMatrix.at(v).at(w);
     }
 
     std::vector<int> GraphMatrix::adj(int v) const {

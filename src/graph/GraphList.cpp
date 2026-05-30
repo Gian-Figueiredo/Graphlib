@@ -6,22 +6,7 @@ namespace graphlib {
     GraphList::GraphList(int numVertices) : adjList(numVertices) {}
 
     int GraphList::V() const {
-        return adjList.size();
-    }
-
-    int GraphList::E() const {
-        int numVertices = adjList.size();
-        double numEdge = 0;
-        for (int i = 0; i < numVertices; i++) {
-            for (const auto j : adjList.at(i)) {
-                if (i == j) {
-                    numEdge += 1;
-                } else {
-                    numEdge += 0.5;
-                }
-            }
-        }
-        return (int)numEdge;
+        return static_cast<int>(adjList.size());
     }
 
     void GraphList::addEdge(int v, int w) {
@@ -32,8 +17,27 @@ namespace graphlib {
     void GraphList::clearEdges() {
         int numVertices = adjList.size();
         for (int c = 0; c < numVertices; c++) {
-            adjList.at(c) = std::vector<int>();
+            adjList.at(c).clear();
         }
+    }
+
+    int GraphList::degree(int v) const {
+        int degree = 0;
+        for (const auto i : adjList.at(v)) {
+            if (i == v) {
+                degree += 2;
+            } else {
+                degree += 1;
+            }
+        }
+        return degree;
+    }
+
+    bool GraphList::hasEdge(int v, int w) const {
+        for (auto const i : adjList.at(v)) {
+            if (i == w) return true;
+        }
+        return false;
     }
 
     std::vector<int> GraphList::adj(int v) const {
