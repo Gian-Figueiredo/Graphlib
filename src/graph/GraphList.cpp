@@ -47,7 +47,7 @@ namespace graphlib {
     std::string GraphList::toString() const {
         int numVertices = adjList.size();
         if (numVertices == 0) {
-            return "Grafo nulo";
+            return "Null Graph";
         }
 
         std::string str;
