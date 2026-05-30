@@ -13,14 +13,16 @@ namespace graphlib {
         public:
             GraphList(int numVertices);
 
-            int V() const;
-            int E() const;
+            int V() const override;
 
-            void addEdge(int v, int w);
-            void clearEdges();
+            void addEdge(int v, int w) override;
+            void clearEdges() override;
 
-            std::vector<int> adj(int v) const;
-            std::string toString() const;
+            int degree(int v) const override;
+            bool hasEdge(int v, int w) const override;
+
+            std::vector<int> adj(int v) const override;
+            std::string toString() const override;
     };
 }
 
