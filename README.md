@@ -15,10 +15,9 @@ A lightweight C++ library focused on simplicity, performance, and clean organiza
     * `addEdge(u, v)`: Inserts an edge between two vertices.
 
 ### **🛠️ In Development**
-* **Adjacency List (`GraphList`)**: Optimized implementation for sparse graphs.
 * **Dynamic Management**: Methods for adding/removing vertices and edges at runtime.
 * **Graph Classification**: Algorithms to identify properties (connectivity, cycles, bipartite, etc.).
-* **Directed Graphs (Digraphs)**: Support for directed edge implementation and algorithms.
+* **DFS and BFS**: Deep-First Search and Breadth-First Search (algorithms to explorate the graph)
 
 ---
 
