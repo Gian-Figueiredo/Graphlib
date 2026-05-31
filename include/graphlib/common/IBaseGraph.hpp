@@ -10,8 +10,6 @@ namespace graphlib {
             virtual int V() const = 0;
             virtual int E() const = 0;
 
-            virtual void clearEdges() = 0;
-
             virtual std::vector<int> adj(int v) const = 0;
             virtual std::string toString() const = 0;
 

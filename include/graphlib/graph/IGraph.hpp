@@ -7,6 +7,7 @@ namespace graphlib {
     class IGraph : public IBaseGraph {
         public:
             virtual void addEdge(int v, int w) = 0;
+            virtual void clearEdges() = 0;
 
             virtual int degree(int v) const = 0;
 

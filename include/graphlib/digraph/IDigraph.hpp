@@ -5,10 +5,12 @@
 
 namespace graphlib {
     class IDigraph : public IBaseGraph {
-        virtual void addArc(int v, int w) = 0;
+        public:
+            virtual void addArc(int v, int w) = 0;
+            virtual void clearArcs() = 0;
 
-        virtual int inDegree(int v) const = 0;
-        virtual int outDegree(int v) const = 0;
+            virtual int inDegree(int v) const = 0;
+            virtual int outDegree(int v) const = 0;
     };
 }
 

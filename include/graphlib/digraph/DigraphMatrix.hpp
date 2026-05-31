@@ -16,7 +16,7 @@ namespace graphlib {
             int V() const override;
 
             void addArc(int v, int w) override;
-            void clearEdges() override;
+            void clearArcs() override;
 
             int inDegree(int v) const override;
             int outDegree(int v) const override;
