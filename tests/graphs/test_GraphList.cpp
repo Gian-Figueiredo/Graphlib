@@ -1,4 +1,4 @@
-#include <graphlib/GraphList.hpp>
+#include <graphlib/graph/GraphList.hpp>
 #include <test_utils.hpp>
 #include <iostream>
 

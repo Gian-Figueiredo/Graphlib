@@ -1,7 +1,7 @@
 #ifndef GRAPH_TEST_HPP
 #define GRAPH_TEST_HPP
 
-#include <graphlib/Graph.hpp>
+#include <graphlib/graph/IGraph.hpp>
 #include <cassert>
 #include <vector>
 #include <algorithm>
@@ -32,6 +32,24 @@ namespace graphlib::test {
         g.addEdge(0, 3);
 
         assert(g.E() == 3);
+    }
+
+    inline void test_degree(graphlib::IGraph& g) {
+        g.clearEdges();
+        assert(g.E() == 0);
+
+        for (int c = 0; c < g.V(); c++) {
+            g.addEdge(0, c);
+        }
+    }
+
+    inline void test_hasEdge(graphlib::IGraph& g) {
+        g.clearEdges();
+        assert(g.E() == 0);
+
+        g.addEdge(0, g.V()-1);
+        assert(g.hasEdge(0, g.V()-1));
+        assert(g.hasEdge(g.V()-1, 0));
     }
 
     inline void test_adj(graphlib::IGraph& g) {
