@@ -6,6 +6,7 @@
 #include <graphlib/common/IBaseGraph.hpp>
 #include <graphlib/algorithms/traversal/DFS.hpp>
 #include <graphlib/algorithms/traversal/BFS.hpp>
+#include <graphlib/algorithms/connectivity/ConnectedComponents.hpp>
 #include <cassert>
 #include <vector>
 #include <algorithm>
@@ -167,6 +168,27 @@ namespace graphlib::test {
         assert(result.cor == expected.cor);
         assert(result.dist == expected.dist);
     }
+
+    inline void test_connected_components(graphlib::IGraph& g, std::vector<std::vector<int>> expected) {
+        auto result = graphlib::algorithms::connected_components(g);
+        
+        // 1. Garante que os tamanhos internos e externos são idênticos antes de tudo
+        if (result.size() != expected.size()) {
+            assert(false && "Quantidade de componentes diferente do esperado.");
+        }
+
+        // 2. Ordena os vértices DENTRO de cada componente
+        for (auto& comp : expected) std::sort(comp.begin(), comp.end());
+        for (auto& resComp : result) std::sort(resComp.begin(), resComp.end());
+
+        // 3. Ordena a lista de componentes em si para que fiquem na mesma ordem sequencial
+        std::sort(expected.begin(), expected.end());
+        std::sort(result.begin(), result.end());
+
+        // 4. Agora uma comparação direta de igualdade funciona perfeitamente!
+        assert(result == expected);
+    }
+
 
 } // namespace graphlib::test
 
