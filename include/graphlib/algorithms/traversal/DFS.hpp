@@ -9,7 +9,7 @@ namespace graphlib::algorithms {
 
     struct DFSResult {
         std::vector<int> pai;
-        std::vector<Cor> cor;
+        std::vector<Color> cor;
         std::vector<int> dur;
         std::vector<int> fin;
     };

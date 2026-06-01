@@ -12,10 +12,10 @@ namespace graphlib::algorithms {
 
         BFSResult result;
         result.pai = std::vector<int>(graph.V(), -1);
-        result.cor = std::vector<Cor>(graph.V(), Cor::BRANCO);
+        result.cor = std::vector<Color>(graph.V(), Color::BRANCO);
         result.dist = std::vector<int>(graph.V(), -1);
         
-        result.cor[source] = Cor::CINZA;
+        result.cor[source] = Color::CINZA;
         result.dist[source] = 0;
         result.pai[source] = -1;
 
@@ -27,15 +27,15 @@ namespace graphlib::algorithms {
             Q.pop();
             
             for (const auto i : graph.adj(vertex)) {
-                if (result.cor[i] == Cor::BRANCO) {
-                    result.cor[i] = Cor::CINZA;
+                if (result.cor[i] == Color::BRANCO) {
+                    result.cor[i] = Color::CINZA;
                     result.dist[i] = result.dist[vertex] + 1;
                     result.pai[i] = vertex;
                     Q.push(i);
                 }
             }
 
-            result.cor[vertex] = Cor::PRETO;
+            result.cor[vertex] = Color::PRETO;
         }
 
         return result;

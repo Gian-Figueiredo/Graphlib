@@ -4,29 +4,29 @@
 
 namespace graphlib::algorithms {
     static void dfs_visit(const IBaseGraph& graph, int v, int& tempo, DFSResult& result) {
-        result.cor.at(v) = Cor::CINZA;
+        result.cor.at(v) = Color::CINZA;
         result.dur.at(v) = ++tempo;
         for (const auto i : graph.adj(v)) {
-            if (result.cor.at(i) == Cor::BRANCO) {
+            if (result.cor.at(i) == Color::BRANCO) {
                 result.pai.at(i) = v;
                 dfs_visit(graph, i, tempo, result);
             }
         }
-        result.cor.at(v) = Cor::PRETO;
+        result.cor.at(v) = Color::PRETO;
         result.fin.at(v) = ++tempo;
     }
 
     DFSResult dfs(const IBaseGraph &graph) {
         DFSResult result;
         result.pai = std::vector<int>(graph.V(), -1);
-        result.cor = std::vector<Cor>(graph.V(), Cor::BRANCO);
+        result.cor = std::vector<Color>(graph.V(), Color::BRANCO);
         result.dur = std::vector<int>(graph.V(), -1);
         result.fin = std::vector<int>(graph.V(), -1);
 
         int tempo = 0;
 
         for (int v = 0; v < graph.V(); v++) {
-            if (result.cor.at(v) == Cor::BRANCO) {
+            if (result.cor.at(v) == Color::BRANCO) {
                 dfs_visit(graph, v, tempo, result);
             }
         }

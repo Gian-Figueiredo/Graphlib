@@ -5,6 +5,7 @@
 #include <graphlib/digraph/IDigraph.hpp>
 #include <graphlib/common/IBaseGraph.hpp>
 #include <graphlib/algorithms/traversal/DFS.hpp>
+#include <graphlib/algorithms/traversal/BFS.hpp>
 #include <cassert>
 #include <vector>
 #include <algorithm>
@@ -158,6 +159,13 @@ namespace graphlib::test {
         assert(result.cor == expected.cor);
         assert(result.dur == expected.dur);
         assert(result.fin == expected.fin);  
+    }
+
+    inline void test_bfs(graphlib::IBaseGraph& g, graphlib::algorithms::BFSResult expected) {
+        auto result = graphlib::algorithms::bfs(g, 0);
+        assert(result.pai == expected.pai);
+        assert(result.cor == expected.cor);
+        assert(result.dist == expected.dist);
     }
 
 } // namespace graphlib::test

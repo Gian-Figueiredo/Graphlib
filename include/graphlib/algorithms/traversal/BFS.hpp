@@ -9,7 +9,7 @@ namespace graphlib::algorithms {
 
     struct BFSResult {
         std::vector<int> pai;
-        std::vector<Cor> cor;
+        std::vector<Color> cor;
         std::vector<int> dist;
     };
 

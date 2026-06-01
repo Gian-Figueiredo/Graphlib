@@ -2,7 +2,7 @@
 #define COR_HPP
 
 namespace graphlib::algorithms {
-    enum class Cor {BRANCO, CINZA, PRETO};
+    enum class Color {BRANCO, CINZA, PRETO};
 }
 
 #endif
