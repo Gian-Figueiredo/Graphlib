@@ -5,7 +5,7 @@
 #include <vector>
 
 namespace graphlib::algorithms {
-    std::vector<std::vector<int>> connectedComponents(const IGraph& graph);
+    std::vector<std::vector<int>> connected_components(const IGraph& graph);
 }
 
 #endif

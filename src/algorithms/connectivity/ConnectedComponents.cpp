@@ -5,16 +5,16 @@ namespace graphlib::algorithms {
 
     static void dfs_visit(const IGraph& graph, int v, std::vector<int>& component, std::vector<graphlib::algorithms::Color>& cor) {
         component.push_back(v);
+        cor.at(v) = Color::CINZA;
         for (const auto i : graph.adj(v)) {
             if (cor.at(i) == Color::BRANCO) {
-                cor.at(i) = Color::CINZA;
                 dfs_visit(graph, i, component, cor);
             }
         }
         cor.at(v) = Color::PRETO;
     }
 
-    std::vector<std::vector<int>> connectedComponents(const IGraph& graph) {
+    std::vector<std::vector<int>> connected_components(const IGraph& graph) {
         std::vector<std::vector<int>> components;
         std::vector<graphlib::algorithms::Color> cor(graph.V(), Color::BRANCO);
 
