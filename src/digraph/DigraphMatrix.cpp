@@ -13,7 +13,7 @@ namespace graphlib {
         adjMatrix.at(v).at(w) = true;
     }
 
-    void DigraphMatrix::clearEdges() {
+    void DigraphMatrix::clearArcs() {
         int numVertices = adjMatrix.size();
         for (int c = 0; c < numVertices; c++) {
             adjMatrix.at(c) = std::vector<bool>(numVertices, false);

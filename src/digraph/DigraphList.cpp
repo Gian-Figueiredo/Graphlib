@@ -13,7 +13,7 @@ namespace graphlib {
         adjList.at(v).push_back(w);
     }
 
-    void DigraphList::clearEdges() {
+    void DigraphList::clearArcs() {
         int numVertices = adjList.size();
         for (int c = 0; c < numVertices; c++) {
             adjList.at(c).clear();
