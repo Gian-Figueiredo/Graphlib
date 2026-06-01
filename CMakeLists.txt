@@ -10,6 +10,7 @@ set(SOURCES
     src/digraph/DigraphList.cpp
     src/algorithms/traversal/DFS.cpp
     src/algorithms/traversal/BFS.cpp
+    src/algorithms/connectivity/ConnectedComponents.cpp
 )
 
 # Cria a biblioteca
