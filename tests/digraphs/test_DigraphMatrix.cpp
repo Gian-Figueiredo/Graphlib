@@ -1,9 +1,9 @@
-#include <graphlib/digraph/DigraphList.hpp>
+#include <graphlib/digraph/DigraphMatrix.hpp>
 #include <test_utils.hpp>
 #include <iostream>
 
 int main() {
-    graphlib::DigraphList d(5);
+    graphlib::DigraphMatrix d(5);
     d.addArc(1, 2);
     d.addArc(2, 3);
     graphlib::test::run_digraph_contract_test(d, 5, 2);

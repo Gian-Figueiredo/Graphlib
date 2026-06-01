@@ -1,6 +1,7 @@
 #include <graphlib/digraph/DigraphList.hpp>
 #include <string>
 #include <vector>
+#include <stdexcept>
 
 namespace graphlib {
     DigraphList::DigraphList(int numVertices) : adjList(numVertices) {}
@@ -10,6 +11,9 @@ namespace graphlib {
     }
 
     void DigraphList::addArc(int v, int w) {
+        if (v < 0 || v >= V() || w < 0 || w >= V()) {
+            throw std::out_of_range("Vertex index out of range");
+        }
         adjList.at(v).push_back(w);
     }
 

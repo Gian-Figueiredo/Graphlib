@@ -1,6 +1,7 @@
 #include <graphlib/digraph/DigraphMatrix.hpp>
 #include <vector>
 #include <string>
+#include <stdexcept>
 
 namespace graphlib {
     DigraphMatrix::DigraphMatrix(int numVertices) : adjMatrix(numVertices, std::vector<bool>(numVertices, false)) {}
@@ -10,6 +11,9 @@ namespace graphlib {
     }
 
     void DigraphMatrix::addArc(int v, int w) {
+        if (v < 0 || v >= V() || w < 0 || w >= V()) {
+            throw std::out_of_range("Vertex index out of range");
+        }
         adjMatrix.at(v).at(w) = true;
     }
 
