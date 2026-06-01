@@ -4,6 +4,7 @@
 #include <graphlib/graph/IGraph.hpp>
 #include <graphlib/digraph/IDigraph.hpp>
 #include <graphlib/common/IBaseGraph.hpp>
+#include <graphlib/algorithms/traversal/DFS.hpp>
 #include <cassert>
 #include <vector>
 #include <algorithm>
@@ -149,6 +150,14 @@ namespace graphlib::test {
         test_digraph_adj(d);
         test_inDegree(d);
         test_outDegree(d);
+    }
+
+    inline void test_dfs(graphlib::IBaseGraph& g, graphlib::algorithms::DFSResult expected) {
+        auto result = graphlib::algorithms::dfs(g);
+        assert(result.pai == expected.pai);
+        assert(result.cor == expected.cor);
+        assert(result.dur == expected.dur);
+        assert(result.fin == expected.fin);  
     }
 
 } // namespace graphlib::test
