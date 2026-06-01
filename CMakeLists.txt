@@ -8,6 +8,7 @@ set(SOURCES
     src/graph/GraphList.cpp
     src/digraph/DigraphMatrix.cpp
     src/digraph/DigraphList.cpp
+    src/algorithms/traversal/DFS.cpp
 )
 
 # Cria a biblioteca
