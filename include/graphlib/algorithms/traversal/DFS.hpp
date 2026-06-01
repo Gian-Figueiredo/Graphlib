@@ -2,10 +2,10 @@
 #define DFS_HPP
 
 #include <graphlib/common/IBaseGraph.hpp>
+#include <graphlib/common/Repository.hpp>
 #include <vector>
 
 namespace graphlib::algorithms {
-    enum class Cor {BRANCO, CINZA, PRETO};
 
     struct DFSResult {
         std::vector<int> pai;
