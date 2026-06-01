@@ -22,3 +22,4 @@ endfunction()
 # Testes
 add_graph_test(TestGraphMatrix test_graph_matrix graphs/test_GraphMatrix.cpp)
 add_graph_test(TestGraphList test_graph_list graphs/test_GraphList.cpp)
+add_graph_test(TestDigraphList test_digraph_list digraphs/test_DigraphList.cpp)
